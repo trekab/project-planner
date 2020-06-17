@@ -51,9 +51,7 @@ class Tooltip extends Component{
     tooltipElement.textContent = 'DUMMY';
     tooltipElement.addEventListener('click', this.closeTooltip.bind(this));
     this.element = tooltipElement;
-  }
-  
-
+  } 
 }
 
 class ProjectItem {

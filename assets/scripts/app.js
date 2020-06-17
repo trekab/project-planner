@@ -1,7 +1,28 @@
 class Tooltip {}
 
-class ProjectItem {}
+class ProjectItem {
+  constructor(id){
+    this.id = id;
+  }
+}
 
-class ProjectList {}
+class ProjectList {
+  projects = [];
 
-class App {}
+  constructor(type){
+    const prjItems = document.querySelectorAll(`#${type}-projects li`);
+    for(const prjItem of prjItems){
+      this.projects.push(new ProjectItem(prjItem.id));
+    }
+    console.log(this.projects);
+  }
+}
+
+class App {
+  static init(){
+    const activeProjectList = new ProjectList('active');
+    const finishedProjectList = new ProjectList('finished');
+  }
+}
+
+App.init();
